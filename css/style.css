@@ -1,0 +1,100 @@
+*,
+*:after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24xp;
+  color: #333;
+  background-color: #fefefe;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+/* ============
+main css
+================*/
+
+.container {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+.menu ul {
+  background: green;
+  display: flex;
+}
+.menu li {
+  border-right: 2px solid darkslategrey;
+  position: relative;
+}
+.menu li:last-child {
+  border-right: 0;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 13px;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #fefefe;
+}
+.menu a:hover {
+  color: orange;
+}
+
+/* dropdown */
+.menu ul ul {
+  flex-direction: column;
+  position: absolute;
+  top: 120%;
+  width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.menu ul ul li {
+  border-right: 0;
+  border-bottom: 2px solid darkslategrey;
+  position: relative;
+}
+
+.menu ul ul li:last-child {
+  border-bottom: 0;
+}
+
+.menu ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  top: 100%;
+}
+
+/* dropdown 2nd layer */
+.menu ul ul ul.second-layer {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  left: 100%;
+  top: 0;
+}
+
+.menu ul ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
